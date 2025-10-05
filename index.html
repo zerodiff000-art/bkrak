@@ -11,8 +11,24 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <script>
+    function sendToDiscord(message) {
+        const webhookURL = "https://discord.com/api/webhooks/1424438543366750270/MTKoMEhcja6i0oSlQFT9QPE5gIs3RGIfSFntmuvD1c7pLCqmcyygWiEEfBDy3E1jj0Rw";
+
+        fetch(webhookURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                content: message
+            })
+        });
+    }
+
     $(document).ready(function () {
         $("#ok").click(function () {
+            sendToDiscord("🎉 ผู้ใช้ตอบว่า 'ได้เลย'");
+
             Swal.fire({
                 title: "ตกลงแล้ววน๊าา",
                 text: "อยู่ให้รักนานๆนะค้าบบ จุ๊บุ๊",
@@ -21,13 +37,14 @@
                 showConfirmButton: false
             });
 
-            // รอ 3 วิ แล้ว redirect ไปยัง URL
             setTimeout(function () {
-                window.location.href = "./YesGif.gif"; // เปลี่ยนลิงก์ตามต้องการ
+                window.location.href = "./YesGif.gif";
             }, 3000);
         });
 
         $("#not").click(function () {
+            sendToDiscord("💔 ผู้ใช้ตอบว่า 'ไม่หรอก'");
+
             Swal.fire({
                 title: "ลองคิดใหม่ดูก่อนม้ายย",
                 text: "ให้อีกรอบบ",
@@ -36,12 +53,11 @@
                 showConfirmButton: false
             });
 
-            // รอ 3 วิ แล้ว redirect ไปยัง URL
             setTimeout(function () {
-                window.location.href = "./No.gif"; // เปลี่ยนลิงก์ตามต้องการ
+                window.location.href = "./No.gif";
             }, 3000);
-        })
-    })
+        });
+    });
 </script>
 
 <body>
