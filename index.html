@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้ากน๊าา มีรายจาบอกก</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $("#ok").click(function () {
+            Swal.fire({
+                title: "ตกลงแล้ววน๊าา",
+                text: "อยู่ให้รักนานๆนะค้าบบ จุ๊บุ๊",
+                icon: "success",
+                timer: 3000,
+                showConfirmButton: false
+            });
+
+            // รอ 3 วิ แล้ว redirect ไปยัง URL
+            setTimeout(function () {
+                window.location.href = "./YesGif.gif"; // เปลี่ยนลิงก์ตามต้องการ
+            }, 3000);
+        });
+
+        $("#not").click(function () {
+            Swal.fire({
+                title: "ลองคิดใหม่ดูก่อนม้ายย",
+                text: "ให้อีกรอบบ",
+                icon: "error",
+                timer: 3000,
+                showConfirmButton: false
+            });
+
+            // รอ 3 วิ แล้ว redirect ไปยัง URL
+            setTimeout(function () {
+                window.location.href = "./No.gif"; // เปลี่ยนลิงก์ตามต้องการ
+            }, 3000);
+        })
+    })
+</script>
+
+<body>
+    <div class="h-screen bg-[#EED3D9] flex justify-center items-center">
+        <div class="flex-col gap-2 text-[#ff4b72]">
+            <img class="w-80 h-80 object-cover rounded-xl border border-black/5" src="./L2.png" alt="">
+            <h1 class="text-4xl text-center mt-5">รักนะ</h1>
+            <h2 class="text-2xl text-center">เป็นแฟนกันมุ้ย</h2>
+            <div class="flex gap-2 justify-center items-center mt-5 *:rounded-sm">
+                <button id="not" class="py-2 px-2 border w-full">ไม่หรอก</button>
+                <button id="ok" class="py-2 px-2 border w-full">ได้เลย</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
